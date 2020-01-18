@@ -16,7 +16,7 @@ subs = {
   "depression_help" : None,
   "Anxiety" : None
 }
-THREAD_LIMIT = 10
+THREAD_LIMIT = 100
 
 def remove_emoji_and_url(str):
     RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
@@ -33,6 +33,10 @@ def find_max_comment(comments):
         if comment.score > max_score:
             max_comment = comment
             max_score = comment.score
+  #  if not max_comment:
+   #     print(max_score)
+    #    max_comment = comments[0]
+
     return max_comment
 
 def download_top(sub=str, limit=int):
@@ -41,9 +45,10 @@ def download_top(sub=str, limit=int):
   
   for submission in posts:
     post = remove_emoji_and_url(submission.title) + "\n" + remove_emoji_and_url(submission.selftext)
-    comment = remove_emoji_and_url(find_max_comment(submission.comments.list()[:1000]).body)
-    
-    post_comments.append([post, comment])
+    if submission.comments.list():
+        comment = remove_emoji_and_url(find_max_comment(submission.comments.list()[:1000]).body)
+        post_comments.append([post, comment])
+  
   return post_comments
 
 print("Downloading")
