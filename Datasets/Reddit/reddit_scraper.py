@@ -3,6 +3,7 @@
 import praw
 import re
 import pickle
+from credentials import *
 
 def remove_emoji_url(str):
     RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
@@ -11,11 +12,13 @@ def remove_emoji_url(str):
     str = str.replace('\n','')
     return str
 
-reddit = praw.Reddit(client_id='REDACTED',
-                     client_secret='REDACTED',
-                     user_agent='Moodverse',
-                     username='REDACTED',
-                     password='REDACTED')
+reddit = praw.Reddit(
+          client_id=client_id,
+          client_secret=client_secret,
+          user_agent='Moodverse',
+          username=username,
+          password=password
+          )
 
 depression_list = []
 confessions_list = []
