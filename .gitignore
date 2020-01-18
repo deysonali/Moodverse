@@ -1,3 +1,4 @@
 *.json
+.local
 credentials.py
 Datasets/Reddit/__pycache__/credentials.cpython-36.pyc

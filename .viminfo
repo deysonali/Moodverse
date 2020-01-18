@@ -12,7 +12,7 @@
 ~h
 # Command Line History (newest to oldest):
 :x
-|2,0,1579390590,,"x"
+|2,0,1579391659,,"x"
 
 # Search String History (newest to oldest):
 
@@ -25,38 +25,54 @@
 # Registers:
 
 # File marks:
-'0  38  4  ~/Datasets/Reddit/reddit_scraper.py
-|4,48,38,4,1579390590,"~/Datasets/Reddit/reddit_scraper.py"
-'1  39  0  ~/Datasets/Reddit/reddit_scraper.py
-|4,49,39,0,1579389441,"~/Datasets/Reddit/reddit_scraper.py"
+'0  2  5  ~/.gitignore
+|4,48,2,5,1579391659,"~/.gitignore"
+'1  38  4  ~/Datasets/Reddit/reddit_scraper.py
+|4,49,38,4,1579390590,"~/Datasets/Reddit/reddit_scraper.py"
 '2  39  0  ~/Datasets/Reddit/reddit_scraper.py
 |4,50,39,0,1579389441,"~/Datasets/Reddit/reddit_scraper.py"
-'3  19  17  ~/Datasets/Reddit/reddit_scraper.py
-|4,51,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
+'3  39  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,51,39,0,1579389441,"~/Datasets/Reddit/reddit_scraper.py"
 '4  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,52,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
 '5  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,53,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
 '6  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,54,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
-'7  3  21  ~/Datasets/Reddit/credentials.py
-|4,55,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
-'8  4  24  ~/.jupyter/jupyter_notebook_config.py
-|4,56,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
-'9  120  29  ~/.bashrc
-|4,57,120,29,1579388457,"~/.bashrc"
+'7  19  17  ~/Datasets/Reddit/reddit_scraper.py
+|4,55,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
+'8  3  21  ~/Datasets/Reddit/credentials.py
+|4,56,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+'9  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,57,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
 
 # Jumplist (newest first):
+-'  2  5  ~/.gitignore
+|4,39,2,5,1579391659,"~/.gitignore"
+-'  1  0  ~/.gitignore
+|4,39,1,0,1579391653,"~/.gitignore"
+-'  38  4  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,38,4,1579390590,"~/Datasets/Reddit/reddit_scraper.py"
 -'  38  4  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,38,4,1579390590,"~/Datasets/Reddit/reddit_scraper.py"
 -'  39  0  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,39,0,1579390541,"~/Datasets/Reddit/reddit_scraper.py"
+-'  39  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,39,0,1579390541,"~/Datasets/Reddit/reddit_scraper.py"
+-'  39  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,39,0,1579389441,"~/Datasets/Reddit/reddit_scraper.py"
 -'  39  0  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,39,0,1579389441,"~/Datasets/Reddit/reddit_scraper.py"
 -'  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,19,17,1579389384,"~/Datasets/Reddit/reddit_scraper.py"
 -'  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,19,17,1579389384,"~/Datasets/Reddit/reddit_scraper.py"
+-'  19  17  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,19,17,1579389384,"~/Datasets/Reddit/reddit_scraper.py"
+-'  19  17  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,19,17,1579389384,"~/Datasets/Reddit/reddit_scraper.py"
+-'  19  17  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
 -'  19  17  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,19,17,1579388887,"~/Datasets/Reddit/reddit_scraper.py"
 -'  1  0  ~/Datasets/Reddit/reddit_scraper.py
@@ -65,6 +81,12 @@
 |4,39,1,0,1579388875,"~/Datasets/Reddit/reddit_scraper.py"
 -'  1  0  ~/Datasets/Reddit/reddit_scraper.py
 |4,39,1,0,1579388875,"~/Datasets/Reddit/reddit_scraper.py"
+-'  1  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,1,0,1579388875,"~/Datasets/Reddit/reddit_scraper.py"
+-'  1  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,1,0,1579388875,"~/Datasets/Reddit/reddit_scraper.py"
+-'  1  0  ~/Datasets/Reddit/reddit_scraper.py
+|4,39,1,0,1579388875,"~/Datasets/Reddit/reddit_scraper.py"
 -'  3  21  ~/Datasets/Reddit/credentials.py
 |4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
 -'  3  21  ~/Datasets/Reddit/credentials.py
@@ -81,6 +103,38 @@
 |4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
 -'  3  21  ~/Datasets/Reddit/credentials.py
 |4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  3  21  ~/Datasets/Reddit/credentials.py
+|4,39,3,21,1579388856,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
+-'  1  0  ~/Datasets/Reddit/credentials.py
+|4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
 -'  1  0  ~/Datasets/Reddit/credentials.py
 |4,39,1,0,1579388852,"~/Datasets/Reddit/credentials.py"
 -'  1  0  ~/Datasets/Reddit/credentials.py
@@ -129,6 +183,38 @@
 |4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
 -'  4  24  ~/.jupyter/jupyter_notebook_config.py
 |4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
+-'  4  24  ~/.jupyter/jupyter_notebook_config.py
+|4,39,4,24,1579388544,"~/.jupyter/jupyter_notebook_config.py"
 -'  1  0  ~/.jupyter/jupyter_notebook_config.py
 |4,39,1,0,1579388535,"~/.jupyter/jupyter_notebook_config.py"
 -'  1  0  ~/.jupyter/jupyter_notebook_config.py
@@ -161,94 +247,15 @@
 |4,39,1,0,1579388535,"~/.jupyter/jupyter_notebook_config.py"
 -'  1  0  ~/.jupyter/jupyter_notebook_config.py
 |4,39,1,0,1579388535,"~/.jupyter/jupyter_notebook_config.py"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  120  29  ~/.bashrc
-|4,39,120,29,1579388457,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
--'  1  0  ~/.bashrc
-|4,39,1,0,1579388406,"~/.bashrc"
 
 # History of marks within files (newest to oldest):
+
+> ~/.gitignore
+	*	1579391659	0
+	"	2	5
+	^	2	6
+	.	2	5
+	+	2	5
 
 > ~/Datasets/Reddit/reddit_scraper.py
 	*	1579390589	0
