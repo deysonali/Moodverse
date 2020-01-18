@@ -17,6 +17,16 @@ reddit = praw.Reddit(client_id='REDACTED',
                      username='REDACTED',
                      password='REDACTED')
 
+r_depression = reddit.subreddit('depression')
+r_confessions = reddit.subreddit('confessions')
+r_depression_help = reddit.subreddit('depression_help')
+r_Anxiety = reddit.subreddit('Anxiety')
+
+top_depression = r_depression.top(limit=100)
+# top_confessions = r_confessions.top(limit=3)
+top_depression_help = r_depression_help.top(limit=100)
+top_Anxiety = r_Anxiety.top(limit=100)
+
 depression_list = []
 confessions_list = []
 depression_help_list = []
