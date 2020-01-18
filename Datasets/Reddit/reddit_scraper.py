@@ -1,74 +1,58 @@
-#! python3
-
 import praw
 import re
 import pickle
 from credentials import *
 
-def remove_emoji_url(str):
+reddit = praw.Reddit(
+          client_id=client_id,
+          client_secret=client_secret,
+          user_agent='Moodverse'
+          )
+
+# Define subreddits 
+subs = {
+  "depression" : None,
+  "confessions" : None,
+  "depression_help" : None,
+  "Anxiety" : None
+}
+THREAD_LIMIT = 10
+
+def remove_emoji_and_url(str):
     RE_EMOJI = re.compile('[\U00010000-\U0010ffff]', flags=re.UNICODE)
     str = RE_EMOJI.sub(r'', str)
     str = re.sub(r'^https?:\/\/.*[\r\n]*', '', str, flags=re.MULTILINE)
     str = str.replace('\n','')
-    return str
+    return str  
+  
+def find_max_comment(comments):
+    max_score = 0
+    max_comment = None
+    for comment in comments:
+      if hasattr(comment, "score") and hasattr(comment, "body"):
+        if comment.score > max_score:
+            max_comment = comment
+            max_score = comment.score
+    return max_comment
 
-reddit = praw.Reddit(
-          client_id=client_id,
-          client_secret=client_secret,
-          user_agent='Moodverse',
-          username=username,
-          password=password
-          )
+def download_top(sub=str, limit=int):
+  posts = reddit.subreddit(sub).top(limit=limit)
+  post_comments = []
+  
+  for submission in posts:
+    post = remove_emoji_and_url(submission.title) + "\n" + remove_emoji_and_url(submission.selftext)
+    comment = remove_emoji_and_url(find_max_comment(submission.comments.list()[:1000]).body)
+    
+    post_comments.append([post, comment])
+  return post_comments
 
-r_depression = reddit.subreddit('depression')
-r_confessions = reddit.subreddit('confessions')
-r_depression_help = reddit.subreddit('depression_help')
-r_Anxiety = reddit.subreddit('Anxiety')
+print("Downloading")
 
-top_depression = r_depression.top(limit=100)
-# top_confessions = r_confessions.top(limit=3)
-top_depression_help = r_depression_help.top(limit=100)
-top_Anxiety = r_Anxiety.top(limit=100)
-
-depression_list = []
-confessions_list = []
-depression_help_list = []
-Anxiety_list = []
-
-for submission in top_depression:
-    flag = False
-    depression_list.append(remove_emoji_url(submission.title) + remove_emoji_url(submission.selftext))
-    for comment in submission.comments:
-      if (hasattr(comment, "body") and comment.distinguished==None):
-        depression_list.append(remove_emoji_url(comment.body))
-        flag = True
-        break
-    if flag == False:
-      depression_list.pop()
-
-
-for submission in top_Anxiety:
-    flag = False
-    Anxiety_list.append(remove_emoji_url(submission.title) + remove_emoji_url(submission.selftext))
-    for comment in submission.comments:
-      if (hasattr(comment, "body") and comment.distinguished==None):
-        Anxiety_list.append(remove_emoji_url(comment.body))
-        flag = True
-        break
-    if flag == False:
-      Anxiety_list.pop()
-
-for submission in top_depression_help:
-    flag = False
-    depression_help_list.append(remove_emoji_url(submission.title) + remove_emoji_url(submission.selftext))
-    for comment in submission.comments:
-      if (hasattr(comment, "body") and comment.distinguished==None):
-        depression_help_list.append(remove_emoji_url(comment.body))
-        flag = True
-        break
-    if flag == False:
-      depression_help_list.pop()
-
-pickle.dump(depression_list, open("depression.p", "wb" ))
-pickle.dump(depression_help_list, open( "depression_help.p", "wb" ))
-pickle.dump(Anxiety_list, open("Anxiety.p", "wb" ))
+for sub in subs:
+  print(sub)
+  posts = download_top(sub, THREAD_LIMIT)
+  subs[sub] = posts
+  
+pickle.dump(subs, open("post_comments.pickle", "wb" ))
+  
+print("Saved")
