@@ -5,9 +5,10 @@ from cognitive_distortions import find_distortion
 
 from model_loader import *
 
-def flag_detect(message):
+def flag_detect(message, threshold = 0.8):
 
-    if "sadness" in emergency_model.predict(message)[0]:
+    scores = emergency_model.predict(message)[1]
+    if scores[1] >= threshold:
         return True
 
     #for word in ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]:
