@@ -6,16 +6,18 @@ from .utilities.cognitive_distortions import find_distortion
 class Bot:
     
     def __init__(self, 
+                 user,
                  sympathetic_responses = BASE_REPLIES["sympathetic"],
                  clarification_responses = (BASE_REPLIES["clarify"], BASE_REPLIES["clarify_entity"]),
                  reframe_responses = BASE_REPLIES["reframing"],
                  cog_responses = BASE_REPLIES["cog_dist"],
                  flag_detect = flag_detect,
                  explorations_left = 3,
-                 stage_12_threshold = 2/3,
-                 stage_23_threshold = 1/3,
+                 stage_12_threshold = 1/3,
+                 stage_23_threshold = 2/3,
                  ):
         
+        self.user = user
         self.sympatheticResponse = randomResponses(sympathetic_responses)
         self.clarificationResponse = clarificationResponse(clarification_responses[0], clarification_responses[1])
         self.reframeResponse = reFrame(reframe_responses)
@@ -43,8 +45,22 @@ class Bot:
         # Grab top negative / top positive entities
         # self
     
-    def exit(self, self_love_score):
-        pass                   
+    def exit(self):
+        score = self.profile.sl_scores[-1]
+        msg1 = "Thank you for sharing today {}. I know it can be tricky to navigate your thoughts.".format(self.user)
+        
+        if score < self.stage_12_threshold:
+            msg2 = "I'd like to recommend you to reach out to your closest therapist. While I'm always here for you, I believe you'd be most benefited by in-person professional. Click the About Me page to see some suggestions."
+        else:
+            msg2 = "Keep up the great work, and remember, I'm always here to listen :)"
+        
+        msg3 = "Chao!"     
+        
+        self.send_sequential_message(msg1, msg2, msg3)
+    
+    def emergency_reply(self):
+        
+                     
     
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
@@ -57,9 +73,17 @@ class Bot:
         recent_score = self.profile.sl_scores[-1]
         
         if self.explorations_left <= 0:
-            self.exit(recent_score)
+            self.exit()
             
-        if     
+        if recent_score > self.stage_23_threshold:
+            stage = self.get_stage3_response
+        elif recent.score < self.stage_12_threshold:
+            stage = self.get_stage1_response
+        else:
+            stage = self.get_stage2_response
+        
+        self.explorations_left -= 1
+        stage(message)
     
     def get_response(self, message):
         
@@ -70,7 +94,7 @@ class Bot:
             return 
         
         if self.check_leave_intent(message):
-            self.exit(1)
+            self.exit()
             return
         
         response = self.seq1.next()(message)
@@ -120,10 +144,11 @@ class Bot:
      
     def get_stage3_response(self, message):
 
+        entity = self.profile.fine_worst_entity()
         self.send_sequential_message(
-            self.proudResponse.generate(),
+            self.proudResponse.generate(entity),
         )
-        self.exit(self.sl_scores[-1])
+        self.exit()
         
 class Profile:
     
@@ -131,6 +156,19 @@ class Profile:
         self.user = user
         self.sl_scores = []
         self.entities = {}
+    
+    def fine_worst_entity(self):
+        
+        all_e = self.entities
+        lowest_score = 100
+        lowest_ent = None
+        
+        for ent in all_e:
+        if all_e[ent] < lowest_score:
+            lowest_score = all_e[ent]
+            lowest_ent = ent
+    
+        return lowest_ent
     
     def update_entities(self, entity_dict):
         pass

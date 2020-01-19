@@ -33,14 +33,9 @@ def get_entity_sentiment(text_content):
     encoding_type = enums.EncodingType.UTF8
     response = client.analyze_entity_sentiment(document, encoding_type=encoding_type)
 
-
-    result = []
+    result = {}
     for entity in response.entities:
-        e_result = {}
-        e_result["name"] = entity.name
-        e_result["type"] = enums.Entity.Type(entity.type).name
-        e_result["score"] = normalize_sentiment(entity.sentiment.score)
-        result.append(e_result)
+        result[entity.name] = normalize_sentiment(entity.sentiment.score)
 
     return result
 
@@ -51,8 +46,8 @@ def fine_worst_entity(text_content):
     lowest_ent = None
     
     for ent in all_e:
-      if ent["Score"] < lowest_score:
-        lowest_score = ent["Score"]
+      if all_e[ent] < lowest_score:
+        lowest_score = all_e[ent]
         lowest_ent = ent
   
     return lowest_ent

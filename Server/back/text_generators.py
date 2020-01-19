@@ -19,7 +19,9 @@ BASE_REPLIES = {
     "reframing" : ["Can you tell me about a time that {} made you think highly of yourself?", 
                    "What about a time {} had a positive impact on you?",
                     "Could you try and reframe your feelings about {} as a more balanced reflection of yourself?",
-                    "If your friend came to you worrying about {}, what would you tell them? How does that make you feel about yourself now?"]
+                    "If your friend came to you worrying about {}, what would you tell them? How does that make you feel about yourself now?"],
+    "proud" : ["I hope you're feeling better, you're pretty fly.", "I'm proud of you for recognizing how amazing you are! {} can't hold you down.",
+         "I'm glad you see how awesome you are!", "I'm happy you recognize your worth!", "I know it's hard talking about {0} and {1}, and you did such a good job. I'm proud of you!"],
 }
 
 class randomResponses:
@@ -58,6 +60,18 @@ class reFrame(randomResponses):
         distortion = find_distortion(message)
         resp = self.get_random()
         return resp.format(entity)
+    
+class proud(randomResponses):
+    
+    def __init__(self, available_prompts):
+        super().__init__(self, available_prompts)
+    
+    def generate(self, entity):
+        distortion = find_distortion(message)
+        resp = self.get_random()
+        if "{}" in resp:
+            return resp.format(entity)
+        return resp
 
 class clarificationResponse:
     
