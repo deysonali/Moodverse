@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cognitive_distortions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment_entity.py" afterDir="false" />
+    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="Uploaded front end to the main branch.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utilities/google_nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities/google_nlp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +22,12 @@
   </component>
   <component name="ProjectId" id="1WZd885CwnQwF9XNorLM5FTJpbW" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RainWu\IdeaProjects\Moodverse\Server" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,7 +41,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sentiment_entity">
+  <component name="RunManager">
     <configuration name="personality_insights" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Moodverse" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,17 +105,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.sentiment_entity" />
-      <item itemvalue="Python.personality_insights" />
-      <item itemvalue="Python.reddit_scraper" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.personality_insights" />
-        <item itemvalue="Python.reddit_scraper" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -140,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579381152105</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Uploaded front end to the main branch.">
+      <created>1579408425243</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579408425243</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,7 +146,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -157,6 +157,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic reddit scraper" />
     <MESSAGE value="Reddit scraper updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reddit scraper updated" />
+    <MESSAGE value="Uploaded front end to the main branch." />
+    <option name="LAST_COMMIT_MESSAGE" value="Uploaded front end to the main branch." />
   </component>
 </project>
