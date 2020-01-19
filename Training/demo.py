@@ -32,21 +32,32 @@ reframing = ["Can you tell me about a time that {} made you think highly of your
              "If your friend came to you worrying about {}, what would you tell them? How does that make you feel about yourself now?"]
 
 
+def identify(entity):
+    return identification[random.randint((0,len(identification)-1)]
 
 def clarify():
-    return clarifying_questions[random.randint(0,len(responses)-1)]
+    return clarifying_questions[random.randint(0,len(clarifying_questions)-1)]
     pass
 def emergency_protocol():
-    return responses[random.randint(0,len(responses)-1)]
+    return emergency_responses[random.randint(0,len(emergency_responses)-1)]
 
-def low_response():
+def low_response(entity):
+    return sympathy[random.randint(0,len(sympathy)-1)]+cog_dist[random.randint(0,len(cog_dist)-1)]\
+        .format(entity)+reframing[random.randint(0,len(reframing)-1)].format(entity)
     pass
-def mid_response():
+
+def mid_response(entity):
+    return cog_dist[random.randint(0, len(cog_dist) - 1)] \
+        .format(entity) + reframing[random.randint(0, len(reframing) - 1)].format(entity)
     pass
-def high_response():
+
+def high_response(entity):
+    return identification[random.randint((0,len(identification)-1)]
     pass
-def end_chat():
-    pass
+
+# def end_chat():
+#     pass
+
 if __name__ == '__main__':
     print("Welcome to Moodverse! How are you feeling?")
 

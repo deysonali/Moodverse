@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="Uploaded front end to the main branch.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Training/demo.py" beforeDir="false" afterPath="$PROJECT_DIR$/Training/demo.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -195,7 +194,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579408425243</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="sentences to hardcode with">
+      <created>1579427703326</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1579427703326</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -215,6 +221,7 @@
     <MESSAGE value="basic reddit scraper" />
     <MESSAGE value="Reddit scraper updated" />
     <MESSAGE value="Uploaded front end to the main branch." />
-    <option name="LAST_COMMIT_MESSAGE" value="Uploaded front end to the main branch." />
+    <MESSAGE value="sentences to hardcode with" />
+    <option name="LAST_COMMIT_MESSAGE" value="sentences to hardcode with" />
   </component>
 </project>
