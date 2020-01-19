@@ -11,8 +11,11 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../../Moodverse-26a3ab24482a.jso
 # Instantiates a client
 client = language.LanguageServiceClient()
 
-def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT list of lists (each list has
-                                                    # [entity, type, score]
+def normalize_sentiment(score):
+    return (score+1)/2
+
+def get_entity_sentiment(text_content): 
+                                                    
     """
     Analyzing Entity Sentiment in a String
     Args:
@@ -28,58 +31,34 @@ def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT 
 
     # Available values: NONE, UTF8, UTF16, UTF32
     encoding_type = enums.EncodingType.UTF8
-
     response = client.analyze_entity_sentiment(document, encoding_type=encoding_type)
 
-    # Loop through entitites returned from the API
 
     result = []
     for entity in response.entities:
-        e_result = []
-        # print(u"Representative name for the entity: {}".format(entity.name))
-        e_result.append(entity.name)
-        # Get entity type, e.g. PERSON, LOCATION, ADDRESS, NUMBER, et al
-        # print(u"Entity type: {}".format(enums.Entity.Type(entity.type).name))
-        e_result.append(enums.Entity.Type(entity.type).name)
-
-        # Get the salience score associated with the entity in the [0, 1.0] range
-        # print(u"Salience score: {}".format(entity.salience))
-        # Get the aggregate sentiment expressed for this entity in the provided document.
-        # e_result.append(entity.salience)
-
-        sentiment = entity.sentiment
-        e_result.append(entity.sentiment.score)
-
-        # print(u"Entity sentiment score: {}".format(sentiment.score))
-        # print(u"Entity sentiment magnitude: {}".format(sentiment.magnitude))
-        # e_result.append(entity.sentiment.magnitude)
-
-        # Loop over the metadata associated with entity. For many known entities,
-        # the metadata is a Wikipedia URL (wikipedia_url) and Knowledge Graph MID (mid).
-        # Some entity types may have additional metadata, e.g. ADDRESS entities
-        # may have metadata for the address street_name, postal_code, et al.
-        # for metadata_name, metadata_value in entity.metadata.items():
-            # print(u"{} = {}".format(metadata_name, metadata_value))
-
-        # Loop over the mentions of this entity in the input document.
-        # The API currently supports proper noun mentions.
-        # for mention in entity.mentions:
-            # print(u"Mention text: {}".format(mention.text.content))
-            # Get the mention type, e.g. PROPER for proper noun
-            # print(
-            #     u"Mention type: {}".format(enums.EntityMention.Type(mention.type).name)
-            # )
-
+        e_result = {}
+        e_result["name"] = entity.name
+        e_result["type"] = enums.Entity.Type(entity.type).name
+        e_result["score"] = normalize_sentiment(entity.sentiment.score)
         result.append(e_result)
 
-    return result #list of lists
+    return result
 
-    # Get the language of the text, which will be the same as
-    # the language specified in the request or, if not specified,
-    # the automatically-detected language.
-    # print(u"Language of the text: {}".format(response.language))
+def fine_worst_entity(text_content):
 
-def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: score of entire sentence
+    all_e = get_entity_sentiment(text_content)
+    lowest_score = 3
+    lowest_ent = None
+    
+    for ent in all_e:
+      if ent["Score"] < lowest_score:
+        lowest_score = ent["Score"]
+        lowest_ent = ent
+  
+    return lowest_ent
+
+def get_sentiment(text_content):
+    
     """
     Analyzing Sentiment in a String
 
@@ -103,53 +82,5 @@ def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: sco
     response = client.analyze_sentiment(document, encoding_type=encoding_type)
     # Get overall sentiment of the input document
     sentiment_score = response.document_sentiment.score
-    # Get sentiment for all sentences in the document
-    # for sentence in response.sentences:
-    #     print(u"Sentence text: {}".format(sentence.text.content))
-    #     print(u"Sentence sentiment score: {}".format(sentence.sentiment.score))
-    #     print(u"Sentence sentiment magnitude: {}".format(sentence.sentiment.magnitude))
 
-    # Get the language of the text, which will be the same as
-    # the language specified in the request or, if not specified,
-    # the automatically-detected language.
-    # print(u"Language of the text: {}".format(response.language))
-    return sentiment_score
-
-def update_self_score(result, entity_dict): #updates self sentiment in entity_dict
-    entity_dict["self"].append(result) #adds on the new number
-    return entity_dict
-
-def update_entities(result, entity_dict): #updates list of other entities and their associated sentiments
-    for set in result:
-        entity = set[0]
-        score = set[2]
-        if entity in entity_dict:
-            entity_dict[entity].append(score)
-        else:
-            entity_dict[entity] = [score]
-        return entity_dict
-    
-def categorize(input):
-
-    # input = "I am disappointed in myself."
-    self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
-    entity_dict = {"self" : []}
-
-    #TODO make a function or something
-
-    result = sample_analyze_entity_sentiment(input)
-
-    if result == []:
-        for word in input.split():
-            if word in self_words:
-                self_sentiment = sample_analyze_sentiment(input)
-                update_self_score(self_sentiment, entity_dict)
-                break
-    else:
-        update_dict(result, entity_dict)
-
-    return entity_dict
-
-def self_love_score(input):
-    #TODO: Please
-    pass
+    return normalize_sentiment(sentiment_score)

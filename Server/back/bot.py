@@ -1,5 +1,6 @@
 import sys
 from text_generators import *
+from utilities.nlp import *
 from utilities.cognitive_distortions import find_distortion
 
 class Bot:
@@ -7,7 +8,8 @@ class Bot:
     def __init__(self, 
                  sympathetic_responses = BASE_REPLIES["sympathetic"],
                  clarification_responses = (BASE_REPLIES["clarify"], BASE_REPLIES["clarify_entity"]),
-                 flag_detect = lambda x: False
+                 flag_detect = flag_detect,
+                 exploration_max = 3,
                  ):
         
         self.sympatheticResponse = randomResponses(sympathetic_responses)
@@ -20,13 +22,17 @@ class Bot:
             self.follow_exploration,
             )
         self.profile = Profile()
+        self.exploration_max = exploration_max
 
     def capture(self, message):
         
         # Grab self-love score
         self.profile.last_sl = self_love_score(message)
         # Grab top negative / top positive entities
-        
+        # self
+    
+    def exit(self, self_love_score):
+        pass                   
     
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
@@ -49,7 +55,8 @@ class Bot:
         response = self.seq.next()(message)
     
     def send(message):
-        sys.stdout.write(format_reply(str(message)))
+        return format_reply(str(message))
+        # sys.stdout.write()
     
     def format_reply(message):
         
@@ -77,14 +84,24 @@ class Bot:
             self.clarificationResponse.generate(),
         )
 
-    # def 
-
+    def get_stage1_response(self, message):
+        
+        ent = fine_worst_entity(message)
+        
+        self.send_sequential_message(
+            self.sympatheticResponse.generate(),
+            self.clarificationResponse.generate(entity=ent),
+        )
+        
 class Profile:
     
     def __init__(self, user):
         self.user = user
-        self.last_sl = 0. # last_self-love score (out of 1)
+        self.sl_scores = []
         self.entities = {}
+    
+    def update_entities(self, entity_dict):
+        pass
     
     def get_history(self):
         #TODO: Implement w/ firebase
@@ -104,3 +121,9 @@ class Sequence:
         if i+1 < len(self.methods)-1:
             self.last = self.methods[i+1]
             return self.methods[i+1]
+        
+def flag_detect(message):
+    if "sadness" in emergency_model.predict(message)[0]:
+        return True
+    else:
+        return False

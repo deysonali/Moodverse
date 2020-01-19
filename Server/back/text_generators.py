@@ -47,7 +47,7 @@ class clarificationResponse:
         self.general_responses = general_responses
         self.entity_responses = entity_responses
     
-    def generate(entity = None):
+    def generate(self, entity = None):
         
         if entity:
             i = random.randint(0, len(self.entity_responses)-1)
