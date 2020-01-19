@@ -3,24 +3,19 @@ import nltk
 import torch
 import torchtext
 from nltk.corpus import stopwords
-
 from nltk.tokenize import sent_tokenize, word_tokenize
 
 glove = torchtext.vocab.GloVe(name="6B", # trained on Wikipedia 2014 corpus
  dim=50) # embedding size = 50
 
-# examples
-
+# categorizes w/ examples
 mind_reading = ["He seems to dislike me", "My girlfriend seems to hate me", "They appear to be mad at me",
                 "I assume they won't accept me"]
 overgeneralization = ["I will never do well", "I will always be a failure", "I always ruin things",
                       "I never get it right"]
 polarized_thinking = ["It would have been perfect if I hadn't failed", "I failed my goals", "It could have been perfect"]
 catastrophizing = ["What if I can't", "I'm worried that it won't work", "I panicked because I was going to mess up"]
-
 distortions = [mind_reading, overgeneralization, polarized_thinking, catastrophizing]
-
-
 
 def similarity(sentence1, sentence2):
     s1 = sentence1.split()
@@ -51,21 +46,8 @@ def distortion_scores(sentence):
         score = score + [dist_score]
     return score
 
-def what_dist(sentence):
-    dists = ["mind reading", "overgeneralization", "polarized thinking", "catastrophizing"]
+def find_distortion(sentence):
+    dists = ["Mind Reading", "Overgeneralization", "Polarized thinking", "Catastrophizing"]
     score = distortion_scores(sentence)
-    print(score)
     ind = score.index(max(score))
-    match = dists[ind]
-    print(match)
-    return match
-if __name__ == '__main__':
-    dists = ["mind reading", "overgeneralization", "polarized thinking", "catastrophizing"]
-
-    print("Input a sentence")
-    sentence = input()
-    score = distortion_scores(sentence)
-    print(score)
-    ind = score.index(max(score))
-    match = dists[ind]
-    print(match)
+    return dists[ind]
