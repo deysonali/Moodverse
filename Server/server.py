@@ -20,7 +20,7 @@ firebase_admin.initialize_app(cred)
 db = firestore.client()
 app = Flask("moodverse")
 app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
 msgs_ref = db.collection("messages")
 
