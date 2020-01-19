@@ -1,8 +1,6 @@
 import random
 
 # from Utilities import google_nlp
-
-from Utilities import sentiment_entity
 import cognitive_distortions
 
 flagger = ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]
@@ -36,6 +34,7 @@ reframing = ["Can you tell me about a time that {} made you think highly of your
 
 
 def clarify():
+    return clarifying_questions[random.randint(0,len(responses)-1)]
     pass
 def emergency_protocol():
     return responses[random.randint(0,len(responses)-1)]
