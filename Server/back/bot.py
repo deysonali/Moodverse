@@ -18,6 +18,7 @@ class Bot:
                  ):
         
         self.user = user
+        self.done = False
         self.sympatheticResponse = randomResponses(sympathetic_responses)
         self.clarificationResponse = clarificationResponse(clarification_responses[0], clarification_responses[1])
         self.reframeResponse = reFrame(reframe_responses)
@@ -38,12 +39,9 @@ class Bot:
         self.stage_12_threshold = stage_12_threshold
         self.stage_23_threshold = stage_23_threshold
 
-    def capture(self, message):
+    def evaluate(self, message):
         
-        # Grab self-love score
-        self.profile.last_sl = self_love_score(message)
-        # Grab top negative / top positive entities
-        # self
+        self.profile.update(message)
     
     def exit(self):
         score = self.profile.sl_scores[-1]
@@ -57,11 +55,13 @@ class Bot:
         msg3 = "Chao!"     
         
         self.send_sequential_message(msg1, msg2, msg3)
+        self.done = True
     
     def emergency_reply(self):
         
-                     
-    
+        self.send("{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.")
+        self.done = True
+        
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
         for word in words:
@@ -87,17 +87,18 @@ class Bot:
     
     def get_response(self, message):
         
-        self.capture(message)
+        if not self.done:
         
-        if self.flag_check(message):
-            self.emergency_reply()
-            return 
-        
-        if self.check_leave_intent(message):
-            self.exit()
-            return
-        
-        response = self.seq1.next()(message)
+            self.evaluate(message)
+            
+            if self.flag_check(message):
+                self.emergency_reply()
+                return 
+            
+            if self.check_leave_intent(message):
+                self.exit()
+            
+            response = self.seq1.next()(message)
     
     def send(message):
         return format_reply(str(message))
@@ -172,6 +173,23 @@ class Profile:
     
     def update_entities(self, entity_dict):
         pass
+        
+    def update(self, message):
+        
+        self.update_entities(get_entity_sentiment(message))
+        l1,l2 = love_model.id2label[0], love_model.id2label[1]
+        prediction, scores = love_model.predict(message)
+        
+        joy_id, sad_id = None, None
+        
+        if "joy" in l1:
+            joy_id = 0
+            sad_id = 1
+        else:
+            joy_id = 1
+            sad_id = 0
+            
+        self.sl_scores.append(joy_id)
     
     def get_history(self):
         #TODO: Implement w/ firebase
