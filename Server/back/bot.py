@@ -65,7 +65,7 @@ class Bot:
         
         msg3 = "Chao!"     
         
-        self.send_sequential_message((msg1, msg2, msg3))
+        self.send_sequential_message(msg1, msg2, msg3)
         self.done = True
     
     def emergency_reply(self):
@@ -115,42 +115,44 @@ class Bot:
             else:
                 response = self.follow_exploration(message)
     
-    def send(message):
-        return format_reply(str(message))
+    def send(self, message):
+        return self.format_reply(str(message))
         # sys.stdout.write()
     
     def format_reply(self, message):
         
         # capitalize first letter
-        message[0] = message[0].upper()
+        #message[0] = message[0].upper()
+        message = message.capitalize()
         # end with a period
         if message[-1] != '.':
-            message[-1] = '.'
+            message += '.'
         
         return message
     
     def send_sequential_message(self, *args):
         message = ""
         for arg in args:
+            print(message)
             message += self.format_reply(arg) + " "
         self.send(message)
     
     def get_initial_message(self, message):
         
-        self.send_sequential_message((
+        self.send_sequential_message(
             self.sympatheticResponse.generate(),
             # Generate categorical insight response
             self.cogResponse.generate(message),
             # Ask for general clarification
             self.clarificationResponse.generate(),
-        ))
+        )
 
     def get_stage1_response(self, message):
 
-        self.send_sequential_message((
+        self.send_sequential_message(
             self.sympatheticResponse.generate(),
             self.clarificationResponse.generate(message),
-        ))
+        )
      
     def get_stage2_response(self, message):
 
