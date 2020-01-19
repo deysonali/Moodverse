@@ -7,7 +7,7 @@ import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 #Loading the emotions dataset
 dataset = pd.read_csv("../Datasets/Positive_thoughts/emotion.data")
 dataset = dataset[dataset.emotions == "joy"]
-#dataset = pd.concat([dataset[dataset.emotions == "joy"][:5000], dataset[dataset.emotions == "sadness"]])
+# dataset = pd.concat([dataset[dataset.emotions == "joy"][:7000], dataset[dataset.emotions == "sadness"][:7000]])
 dataset = dataset.drop(dataset.columns[0], 1)
 
 # Loading reddit dataset
@@ -16,7 +16,7 @@ r_dataset.columns = ["text"]
 r_dataset["emotions"] = ["sadness" for i in range(len(r_dataset))]
 dataset = pd.concat([dataset[:len(r_dataset)], r_dataset])
 
-print(len(dataset[dataset.emotions=="joy"]), len(dataset[dataset.emotions=="sadness"])) 
+# print(len(dataset[dataset.emotions=="joy"]), len(dataset[dataset.emotions=="sadness"])) 
 
 input_sentences = [text.split(" ") for text in dataset["text"].values.tolist()]
 labels = dataset["emotions"].values.tolist()
@@ -59,12 +59,17 @@ X = pad_sequences(X, max_words)
 # Convert Y to numpy array
 Y = keras.utils.to_categorical(Y, num_classes=len(label2id), dtype='float32')
 
-# Print shapes
+# # Print shapes
 print("Shape of X: {}".format(X.shape))
 print("Shape of Y: {}".format(Y.shape))
 
+import pickle
+to_save = [word2id, max_words, id2label]
+f = open("joy_reddit_vars", "wb")
+pickle.dump(to_save, f)
+f.close()
 
-# # Setup LSTM
+# Setup LSTM
 
 # embedding_dim = 100 # The dimension of word embeddings
 
@@ -103,12 +108,11 @@ print("Shape of Y: {}".format(Y.shape))
 # model = keras.Model(inputs=[sequence_input], outputs=output)
 # model.compile(loss="binary_crossentropy", metrics=["accuracy"], optimizer=Adam(lr=0.001))
 
-# # Print model summary
-# print("> Summary")
-# model.summary()
+# # # Print model summary
+# # print("> Summary")
+# # model.summary()
 
-# # Train model 10 iterations
 # model.fit(X, Y, epochs=2, batch_size=64, validation_split=0.1, shuffle=True)
 # print("Finished Training")
-# model.save("./msg_flag_epochs=2, batch_size=64, validation_split=0.1,")
+# model.save("./joy_sad_msg_flag_epochs=2, batch_size=64, validation_split=0.1.hd5")
 # print("Saved!")
