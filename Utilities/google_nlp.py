@@ -20,9 +20,6 @@ def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT 
 
     """
 
-    client = language_v1.LanguageServiceClient()
-
-
     # Available types: PLAIN_TEXT, HTML
     type_ = enums.Document.Type.PLAIN_TEXT
 
@@ -82,9 +79,6 @@ def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT 
     # the automatically-detected language.
     # print(u"Language of the text: {}".format(response.language))
 
-
-
-
 def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: score of entire sentence
     """
     Analyzing Sentiment in a String
@@ -92,9 +86,6 @@ def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: sco
     Args:
       text_content The text content to analyze
     """
-
-    client = language_v1.LanguageServiceClient()
-
     # text_content = 'I am so happy and joyful.'
 
     # Available types: PLAIN_TEXT, HTML
@@ -137,26 +128,26 @@ def update_entities(result, entity_dict): #updates list of other entities and th
         else:
             entity_dict[entity] = [score]
         return entity_dict
+    
 
+def demo():
+    # one usage instance
 
+    input = "I am disappointed in myself."
+    self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
+    entity_dict = {"self" : []}
 
-# one usage instance
+    #TODO make a function or something
 
-input = "I am disappointed in myself."
-self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
-entity_dict = {"self" : []}
+    result = sample_analyze_entity_sentiment(input)
 
-#TODO make a function or something
+    if result == []:
+        for word in input.split():
+            if word in self_words:
+                self_sentiment = sample_analyze_sentiment(input)
+                update_self_score(self_sentiment, entity_dict)
+                break
+    else:
+        update_dict(result, entity_dict)
 
-result = sample_analyze_entity_sentiment(input)
-
-if result == []:
-    for word in input.split():
-        if word in self_words:
-            self_sentiment = sample_analyze_sentiment(input)
-            update_self_score(self_sentiment, entity_dict)
-            break
-else:
-    update_dict(result, entity_dict)
-
-print(entity_dict)
+    print(entity_dict)
