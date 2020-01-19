@@ -130,10 +130,10 @@ def update_entities(result, entity_dict): #updates list of other entities and th
         return entity_dict
     
 
-def demo():
+def categorize(input):
     # one usage instance
 
-    input = "I am disappointed in myself."
+    # input = "I am disappointed in myself."
     self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
     entity_dict = {"self" : []}
 
@@ -150,4 +150,4 @@ def demo():
     else:
         update_dict(result, entity_dict)
 
-    print(entity_dict)
+    return entity_dict

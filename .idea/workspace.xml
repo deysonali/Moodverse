@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Training/demo.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/cognitive_distortions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment_entity.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Utilities/google_nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities/google_nlp.py" afterDir="false" />
     </list>
@@ -39,7 +39,49 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sentiment_entity">
+  <component name="RunManager" selected="Python.demo">
+    <configuration name="cognitive_distortions" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Moodverse" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Users\Sonali\Anaconda3\envs\ece324\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cognitive_distortions.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="demo" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Moodverse" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Training" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Training/demo.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="personality_insights" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Moodverse" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -107,9 +149,13 @@
       <item itemvalue="Python.sentiment_entity" />
       <item itemvalue="Python.personality_insights" />
       <item itemvalue="Python.reddit_scraper" />
+      <item itemvalue="Python.cognitive_distortions" />
+      <item itemvalue="Python.demo" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.demo" />
+        <item itemvalue="Python.cognitive_distortions" />
         <item itemvalue="Python.personality_insights" />
         <item itemvalue="Python.reddit_scraper" />
       </list>
@@ -140,7 +186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579381152105</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Google NLP functions:&#10;&#10;sentiment + entity (takes in a sentence, outputs list of lists each of form [entity, type, score]&#10;&#10;sentiment (takes in sentence, outputs overall score &#10;&#10;end of file has one example usage - need to generalize">
+      <created>1579405969307</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1579405969307</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -157,6 +210,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="basic reddit scraper" />
     <MESSAGE value="Reddit scraper updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reddit scraper updated" />
+    <MESSAGE value="Google NLP functions:&#10;&#10;sentiment + entity (takes in a sentence, outputs list of lists each of form [entity, type, score]&#10;&#10;sentiment (takes in sentence, outputs overall score &#10;&#10;end of file has one example usage - need to generalize" />
+    <option name="LAST_COMMIT_MESSAGE" value="Google NLP functions:&#10;&#10;sentiment + entity (takes in a sentence, outputs list of lists each of form [entity, type, score]&#10;&#10;sentiment (takes in sentence, outputs overall score &#10;&#10;end of file has one example usage - need to generalize" />
   </component>
 </project>
