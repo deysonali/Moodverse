@@ -10,8 +10,7 @@ subs = {
   "Anxiety" : None,
   "SuicideWatch" : None
 }
-THREAD_LIMIT = 100
-
+THREAD_LIMIT = 1000
 
 print("Downloading")
 
@@ -23,7 +22,7 @@ for sub in subs:
 print("Saving")
 
 f = open(r"reddit_posts.txt", "w" )
-[[f.write(text + "\n") for text in subs[sub]] for sub in subs]
+[[f.write(text.lower() + "\n") for text in subs[sub]] for sub in subs]
 f.close()
 
 print("Saved")
