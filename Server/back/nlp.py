@@ -42,8 +42,10 @@ def get_entity_sentiment(text_content):
 def fine_worst_entity(text_content):
 
     all_e = get_entity_sentiment(text_content)
-    lowest_score = 3
+    lowest_score = 100
     lowest_ent = None
+    
+    print(">! All sentiments", all_e)
     
     for ent in all_e:
       if all_e[ent] < lowest_score:
