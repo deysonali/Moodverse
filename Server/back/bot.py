@@ -202,19 +202,10 @@ class Profile:
     def update(self, message):
         
         self.update_entities(get_entity_sentiment(message))
-        l1,l2 = love_model.id2label[0], love_model.id2label[1]
         prediction, scores = love_model.predict(message)
-        
-        joy_id, sad_id = None, None
-        
-        if "joy" in l1:
-            joy_id = 0
-            sad_id = 1
-        else:
-            joy_id = 1
-            sad_id = 0
+        # score[0] is joy
             
-        self.sl_scores.append(joy_id)
+        self.sl_scores.append(scores[0])
     
     def get_history(self):
         #TODO: Implement w/ firebase
