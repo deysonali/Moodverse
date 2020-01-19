@@ -12,4 +12,4 @@ credentials.py
 Datasets/Reddit/__pycache__/credentials.cpython-36.pyc
 .ssh/authorized_keys
 
-!Server
+!Server/front/*
