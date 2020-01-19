@@ -28,7 +28,7 @@ class Bot:
                  explorations_left = 3,
                  stage_12_threshold = 1/3,
                  stage_23_threshold = 2/3,
-                 debug = True,
+                 self.debug = False,
                  ):
         
         self.user = user
@@ -107,22 +107,22 @@ class Bot:
             self.evaluate(message)
             
             if self.flag_check(message):
-                if debug: print("User flagged")
+                if self.debug: print("User flagged")
                 return self.emergency_reply()
             
             if self.check_leave_intent(message):
-                if debug: print("User wants to leave.")
+                if self.debug: print("User wants to leave.")
                 return self.exit()
             
             if not self.i_done:
                 self.i_done = True
-                if debug: print("Initial reply")
+                if self.debug: print("Initial reply")
                 return self.get_initial_message(message)
             else:
-                if debug: print("Follow-on exploration")
+                if self.debug: print("Follow-on exploration")
                 return self.follow_exploration(message)
         
-        if debug:    
+        if self.debug:    
             print("Done has been triggered. No responses")
     
     def send(self, message):
