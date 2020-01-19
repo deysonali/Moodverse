@@ -22,7 +22,7 @@ for sub in subs:
 print("Saving")
 
 f = open(r"reddit_posts.txt", "w" )
-[[f.write(text.lower() + "\n") for text in subs[sub]] for sub in subs]
+[[f.write(text.lower().replace('"', '') + "\n") for text in subs[sub]] for sub in subs]
 f.close()
 
 print("Saved")
