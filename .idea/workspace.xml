@@ -1,17 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="json ignore added">
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/bkgd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/downloads-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/intro-bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/js/grayscale.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" afterDir="false" />
+    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="Created about us page">
+      <change afterPath="$PROJECT_DIR$/.idea/Moodverse.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -214,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1579439033828</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Created about us page">
+      <created>1579441492571</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1579441492571</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -237,6 +237,8 @@
     <MESSAGE value="sentences to hardcode with" />
     <MESSAGE value="Finished insights, chatbot interface." />
     <MESSAGE value="json ignore added" />
-    <option name="LAST_COMMIT_MESSAGE" value="json ignore added" />
+    <MESSAGE value="Created about us" />
+    <MESSAGE value="Created about us page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created about us page" />
   </component>
 </project>
