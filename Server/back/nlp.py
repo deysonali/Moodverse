@@ -45,8 +45,6 @@ def fine_worst_entity(text_content):
     lowest_score = 100
     lowest_ent = None
     
-    print(">! All sentiments", all_e)
-    
     for ent in all_e:
       if all_e[ent] < lowest_score:
         lowest_score = all_e[ent]
