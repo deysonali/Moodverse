@@ -28,7 +28,7 @@ class Bot:
                  explorations_left = 3,
                  stage_12_threshold = 1/3,
                  stage_23_threshold = 2/3,
-                 self.debug = False,
+                 debug = False,
                  ):
         
         self.user = user
