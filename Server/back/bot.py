@@ -5,9 +5,10 @@ from cognitive_distortions import find_distortion
 
 from model_loader import *
 
-def flag_detect(message):
+def flag_detect(message, threshold = 0.8):
 
-    if "sadness" in emergency_model.predict(message)[0]:
+    scores = emergency_model.predict(message)[1]
+    if scores[1] >= threshold:
         return True
 
     #for word in ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]:
@@ -75,7 +76,10 @@ class Bot:
     
     def emergency_reply(self):
         self.done = True
-        return "{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user, self.profile.find_worst_entity())
+        if self.profile.find_worst_entity():
+            return "{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user, self.profile.find_worst_entity())
+        else:
+            return "{0}, I know this is a hard time with. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user)
         
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
@@ -168,7 +172,7 @@ class Bot:
      
     def get_stage3_response(self, message):
 
-        entity = self.profile.fine_worst_entity()
+        entity = self.profile.find_worst_entity()
         return self.send_sequential_message(
                 self.send(self.proudResponse.generate(entity)),
                 self.exit())
@@ -180,7 +184,7 @@ class Profile:
         self.sl_scores = []
         self.entities = {}
     
-    def fine_worst_entity(self):
+    def find_worst_entity(self):
         
         all_e = self.entities
         lowest_score = 100
@@ -199,19 +203,10 @@ class Profile:
     def update(self, message):
         
         self.update_entities(get_entity_sentiment(message))
-        l1,l2 = love_model.id2label[0], love_model.id2label[1]
         prediction, scores = love_model.predict(message)
-        
-        joy_id, sad_id = None, None
-        
-        if "joy" in l1:
-            joy_id = 0
-            sad_id = 1
-        else:
-            joy_id = 1
-            sad_id = 0
+        # score[0] is joy
             
-        self.sl_scores.append(joy_id)
+        self.sl_scores.append(scores[0])
     
     def get_history(self):
         #TODO: Implement w/ firebase

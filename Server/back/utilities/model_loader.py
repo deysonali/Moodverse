@@ -3,10 +3,10 @@ from keras.preprocessing.sequence import pad_sequences
 import pickle 
 import numpy as np
 
-love_hate_path = "../../Models/joy_v_sad.hd5"
-love_hate_vars = "../../Models/joy_sad_vars.p"
-emergency_path = "../../Models/joy_v_reddit.hd5"
-emergency_vars = "../../Models/joy_reddit_vars.p"
+love_hate_path = "../../../Models/joy_v_sad.hd5"
+love_hate_vars = "../../../Models/joy_v_sad.hd5"
+emergency_path = "../../../Models/joy_v_sad.hd5"
+emergency_vars = "../../../Models/joy_v_reddit.hd5"
 
 class Model:
     
@@ -30,6 +30,6 @@ class Model:
         o = self.model.predict(self.encode(message.lower()))
         return self.id2label[np.argmax(o[0])], o[0]
         
-
+        
 love_model = Model(love_hate_path, love_hate_vars)
 emergency_model = Model(emergency_path, emergency_vars)
