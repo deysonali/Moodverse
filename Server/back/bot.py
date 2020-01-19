@@ -168,7 +168,7 @@ class Bot:
      
     def get_stage3_response(self, message):
 
-        entity = self.profile.fine_worst_entity()
+        entity = self.profile.find_worst_entity()
         return self.send_sequential_message(
                 self.send(self.proudResponse.generate(entity)),
                 self.exit())
@@ -180,7 +180,7 @@ class Profile:
         self.sl_scores = []
         self.entities = {}
     
-    def fine_worst_entity(self):
+    def find_worst_entity(self):
         
         all_e = self.entities
         lowest_score = 100
