@@ -1,0 +1,25 @@
+.bootstrap_chat {
+  background-color: #574659;
+  min-height: 100vh;
+}
+
+.text-small {
+  font-size: 0.9rem;
+}
+
+.messages-box, .chat-box {
+  height: 510px;
+  overflow-y: scroll;
+  background-color: #574;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
+.container.py-4.px-5 {
+}
+
+.container.py-4.px-5 {
+}
+

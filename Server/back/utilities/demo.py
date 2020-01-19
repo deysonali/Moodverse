@@ -7,7 +7,8 @@ flagger = ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]
 emergency_responses = ["If you feel you are at risk of hurting yourself or someone else, please call 911 immediately.",
                  "If you are in an emergency situation, please call 911 to get help.",
                  "Please call 911.",
-                 "If you are in a crisis, please call 911."]
+                 "If you are in a crisis, please call 911."
+                 ]
 
 clarifying_questions = ["I'm sorry you are feeling down. What is bothering you?",
                         "What's causing you to feel like that?",

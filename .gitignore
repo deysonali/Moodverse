@@ -11,8 +11,8 @@ credentials.py
 .jupyter/*
 Datasets/Reddit/__pycache__/credentials.cpython-36.pyc
 .ssh/authorized_keys
-<<<<<<< HEAD
 *.pyc
-=======
+*.swp
+*.zip
 
->>>>>>> d0ca503bb48df2007d7ea7b9bd8d2c9cc04010ae
+!Server/front/*
