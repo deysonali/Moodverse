@@ -1,0 +1,4 @@
+google-cloud-language
+google-cloud-storage
+textgenrnn
+tensorflow
