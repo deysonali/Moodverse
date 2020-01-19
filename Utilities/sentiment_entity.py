@@ -3,9 +3,8 @@ from google.cloud.language_v1 import enums
 import os
 import pandas as pd
 
-credential_path = 'REDACTED'
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
-
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../../Moodverse-26a3ab24482a.json"
+client = language_v1.LanguageServiceClient()
 
 def sample_analyze_entity_sentiment(text_content):
     """
@@ -14,10 +13,7 @@ def sample_analyze_entity_sentiment(text_content):
       text_content The text content to analyze
 
     """
-
-    client = language_v1.LanguageServiceClient()
-
-
+    
     # Available types: PLAIN_TEXT, HTML
     type_ = enums.Document.Type.PLAIN_TEXT
 
@@ -77,10 +73,6 @@ def sample_analyze_entity_sentiment(text_content):
     # the automatically-detected language.
     # print(u"Language of the text: {}".format(response.language))
 
-from google.cloud import language_v1
-from google.cloud.language_v1 import enums
-
-
 def sample_analyze_sentiment(text_content): #ASSUMES SINGLE SENTENCE
     """
     Analyzing Sentiment in a String
@@ -88,9 +80,7 @@ def sample_analyze_sentiment(text_content): #ASSUMES SINGLE SENTENCE
     Args:
       text_content The text content to analyze
     """
-
-    client = language_v1.LanguageServiceClient()
-
+    
     # text_content = 'I am so happy and joyful.'
 
     # Available types: PLAIN_TEXT, HTML

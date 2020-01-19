@@ -1,14 +1,18 @@
 *.json
-.local\*
+.local/*
 credentials.py
 .viminfor
 .profile
 .bashrc
 .bash_logout
-.ssh\*
-.ipython\*
-.cache\*
-.jupyter\*
+.ssh/*
+.ipython/*
+.cache/*
+.jupyter/*
 Datasets/Reddit/__pycache__/credentials.cpython-36.pyc
 .ssh/authorized_keys
+<<<<<<< HEAD
 *.pyc
+=======
+
+>>>>>>> d0ca503bb48df2007d7ea7b9bd8d2c9cc04010ae
