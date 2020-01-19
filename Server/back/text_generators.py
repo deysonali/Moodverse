@@ -49,10 +49,10 @@ class cogDist(randomResponses):
     def lookUp(self, distortion):
         
         return {
-            "mind_reading" : "assuming other people's thoughts about you",
-            "overgeneralization" : "using one piece of evidence as the full truth",
-            "polarized_thinking" : "you have an all or nothing attitude",
-            "catastrophizing" : "when you make mountains out of molehills"
+            "Mind Reading" : "assuming other people's thoughts about you",
+            "Overgeneralization" : "using one piece of evidence as the full truth",
+            "Polarized thinking" : "you have an all or nothing attitude",
+            "Catastrophizing" : "when you make mountains out of molehills"
          }[distortion]
 
 class reFrame(randomResponses):

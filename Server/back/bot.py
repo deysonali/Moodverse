@@ -1,5 +1,5 @@
 import sys
-from .text_generators import *
+from text_generators import *
 from nlp import *
 from cognitive_distortions import find_distortion
 
@@ -64,13 +64,12 @@ class Bot:
         
         msg3 = "Chao!"     
         
-        self.send_sequential_message(msg1, msg2, msg3)
         self.done = True
+        return self.send_sequential_message(msg1, msg2, msg3)
     
     def emergency_reply(self):
-        
-        self.send("{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.")
         self.done = True
+        return "{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user, self.profile.find_worst_entity())
         
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
@@ -93,7 +92,7 @@ class Bot:
             stage = self.get_stage2_response
         
         self.explorations_left -= 1
-        stage(message)
+        return stage(message)
     
     def get_response(self, message):
         
@@ -102,21 +101,19 @@ class Bot:
             self.evaluate(message)
             
             if self.flag_check(message):
-                self.emergency_reply()
-                return 
+                return self.emergency_reply()
             
             if self.check_leave_intent(message):
-                self.exit()
+                return self.exit()
             
             if not self.i_done:
-                response = self.get_initial_message(message)
                 self.i_done = True
+                return self.get_initial_message(message)
             else:
-                response = self.follow_exploration(message)
+                return self.follow_exploration(message)
     
     def send(self, message):
         return self.format_reply(str(message))
-        # sys.stdout.write()
     
     def format_reply(self, message):
         
@@ -132,13 +129,12 @@ class Bot:
     def send_sequential_message(self, *args):
         message = ""
         for arg in args:
-            print(message)
             message += self.format_reply(arg) + " "
-        self.send(message)
+        return self.format_reply(message)
     
     def get_initial_message(self, message):
         
-        self.send_sequential_message(
+        return self.send_sequential_message(
             self.sympatheticResponse.generate(),
             # Generate categorical insight response
             self.cogResponse.generate(message),
@@ -148,20 +144,21 @@ class Bot:
 
     def get_stage1_response(self, message):
 
-        self.send_sequential_message(
+        return self.send_sequential_message(
             self.sympatheticResponse.generate(),
             self.clarificationResponse.generate(message),
         )
      
     def get_stage2_response(self, message):
 
-        self.send(self.reframeResponse.generate(message))
+        return self.send(self.reframeResponse.generate(message))
      
     def get_stage3_response(self, message):
 
         entity = self.profile.fine_worst_entity()
-        self.send(self.proudResponse.generate(entity))
-        self.exit()
+        return self.send_sequential_message(
+                self.send(self.proudResponse.generate(entity)),
+                self.exit())
         
 class Profile:
     

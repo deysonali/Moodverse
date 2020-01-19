@@ -14,5 +14,5 @@ Datasets/Reddit/__pycache__/credentials.cpython-36.pyc
 *.pyc
 *.swp
 *.zip
-
+Server/back/.vector_cache/*
 !Server/front/*
