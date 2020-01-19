@@ -88,7 +88,7 @@ class clarificationResponse:
         
         if message:
             i = random.randint(0, len(self.entity_responses)-1)
-            return self.entity_responses[i].format(fine_worst_entity(entity))
+            return self.entity_responses[i].format(fine_worst_entity(message))
         else:
             i = random.randint(0, len(self.general_responses)-1)
             return self.general_responses[i]
