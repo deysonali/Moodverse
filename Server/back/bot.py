@@ -1,7 +1,16 @@
 import sys
-from .text_generators import *
-from .utilities.nlp import *
-from .utilities.cognitive_distortions import find_distortion
+from text_generators import *
+from nlp import *
+from cognitive_distortions import find_distortion
+from model_loader import *
+
+def flag_detect(message):
+        if "sadness" in emergency_model.predict(message)[0]:
+            return True
+        else:
+            return False
+
+
 
 class Bot:
     
@@ -26,8 +35,8 @@ class Bot:
         
         self.flag_check = flag_detect
         self.seq1 = Sequence(
-            self.get_initial_message,
-            self.follow_exploration,
+            [self.get_initial_message,
+            self.follow_exploration,]
             )
         # self.seq2 = CyclicSequence(
         #     self.get_stage1_response,
@@ -125,7 +134,7 @@ class Bot:
         self.send_sequential_message(
             self.sympatheticResponse.generate(),
             # Generate categorical insight response
-            self.cogResponse.generate(self.initial_message),
+            self.cogResponse.generate(message),
             # Ask for general clarification
             self.clarificationResponse.generate(),
         )
@@ -153,8 +162,8 @@ class Bot:
         
 class Profile:
     
-    def __init__(self, user):
-        self.user = user
+    def __init__(self):
+#         self.user = user
         self.sl_scores = []
         self.entities = {}
     
@@ -165,9 +174,9 @@ class Profile:
         lowest_ent = None
         
         for ent in all_e:
-        if all_e[ent] < lowest_score:
-            lowest_score = all_e[ent]
-            lowest_ent = ent
+            if all_e[ent] < lowest_score:
+                lowest_score = all_e[ent]
+                lowest_ent = ent
     
         return lowest_ent
     
@@ -234,9 +243,3 @@ class CyclicSequence:
             
         self.last = self.methods[next_c]
         return self.methods[next_c]
-        
-def flag_detect(message):
-    if "sadness" in emergency_model.predict(message)[0]:
-        return True
-    else:
-        return False

@@ -1,6 +1,6 @@
 import random
-from utilities.cognitive_distortions import find_distortion
-from .utilities.nlp import *
+from cognitive_distortions import find_distortion
+from nlp import *
 
 BASE_REPLIES = {
     "sympathetic" : ["I'm sorry you feel that way.", 
@@ -39,7 +39,7 @@ class randomResponses:
 class cogDist(randomResponses):
     
     def __init__(self, available_prompts):
-        super().__init__(self, available_prompts)
+        randomResponses.__init__(self, available_prompts)
     
     def generate(self, message):
         distortion = find_distortion(message)
@@ -53,7 +53,7 @@ class cogDist(randomResponses):
 class reFrame(randomResponses):
     
     def __init__(self, available_prompts):
-        super().__init__(self, available_prompts)
+        randomResponses.__init__(self, available_prompts)
     
     def generate(self, message):
         entity = fine_worst_entity(message)
@@ -64,7 +64,7 @@ class reFrame(randomResponses):
 class proud(randomResponses):
     
     def __init__(self, available_prompts):
-        super().__init__(self, available_prompts)
+        randomResponses.__init__(self, available_prompts)
     
     def generate(self, entity):
         distortion = find_distortion(message)

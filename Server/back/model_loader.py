@@ -3,10 +3,10 @@ from keras.preprocessing.sequence import pad_sequences
 import pickle 
 import numpy as np
 
-love_hate_path = "../../../Models/joy_v_sad.hd5"
-love_hate_vars = "../../../Models/joy_v_sad.hd5"
-emergency_path = "../../../Models/joy_v_sad.hd5"
-emergency_vars = "../../../Models/joy_v_reddit.hd5"
+love_hate_path = "../../Models/joy_v_sad.hd5"
+love_hate_vars = "../../Models/joy_sad_vars.p"
+emergency_path = "../../Models/joy_v_reddit.hd5"
+emergency_vars = "../../Models/joy_reddit_vars.p"
 
 class Model:
     
