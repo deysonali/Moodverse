@@ -1,4 +1,6 @@
 google-cloud-language
 google-cloud-storage
 textgenrnn
+pandas
+matplotlib
 tensorflow
