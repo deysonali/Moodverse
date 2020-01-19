@@ -3,4 +3,7 @@ google-cloud-storage
 textgenrnn
 pandas
 matplotlib
+torchtext
 tensorflow
+nltk
+torch

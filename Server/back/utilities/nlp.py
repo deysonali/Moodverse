@@ -129,11 +129,9 @@ def update_entities(result, entity_dict): #updates list of other entities and th
             entity_dict[entity] = [score]
         return entity_dict
     
+def categorize(input):
 
-def demo():
-    # one usage instance
-
-    input = "I am disappointed in myself."
+    # input = "I am disappointed in myself."
     self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
     entity_dict = {"self" : []}
 
@@ -150,4 +148,8 @@ def demo():
     else:
         update_dict(result, entity_dict)
 
-    print(entity_dict)
+    return entity_dict
+
+def self_love_score(input):
+    #TODO: Please
+    pass
