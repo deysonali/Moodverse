@@ -6,7 +6,7 @@ from google.cloud import language_v1
 from google.cloud.language_v1 import enums
 
 ## Authenticate
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../../Moodverse-26a3ab24482a.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../../../../Moodverse-26a3ab24482a.json"
 
 # Instantiates a client
 client = language.LanguageServiceClient()

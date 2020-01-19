@@ -1,5 +1,6 @@
 import random
 from utilities.cognitive_distortions import find_distortion
+from .utilities.nlp import *
 
 BASE_REPLIES = {
     "sympathetic" : ["I'm sorry you feel that way.", 
@@ -15,6 +16,10 @@ BASE_REPLIES = {
                 "What's causing you to feel like that about {}?",
                 "Do you honestly believe that about {} right now?",
                 "Maybe you could tell me more about {}?"],
+    "reframing" : ["Can you tell me about a time that {} made you think highly of yourself?", 
+                   "What about a time {} had a positive impact on you?",
+                    "Could you try and reframe your feelings about {} as a more balanced reflection of yourself?",
+                    "If your friend came to you worrying about {}, what would you tell them? How does that make you feel about yourself now?"]
 }
 
 class randomResponses:
@@ -23,6 +28,9 @@ class randomResponses:
         self.available_prompts = available_prompts
     
     def generate(self):
+        return self.get_random()
+
+    def get_random(self):
         i = random.randint(0, len(self.available_prompts)-1)
         return self.available_prompts[i]
 
@@ -33,13 +41,23 @@ class cogDist(randomResponses):
     
     def generate(self, message):
         distortion = find_distortion(message)
-        i = random.randint(0, len(self.available_prompts)-1)
-        resp = self.available_prompts[i]
+        resp = self.get_random()
         return resp.format(distortion, self.lookUp(distortion))
     
     def lookUp(self, distortion):
         #TODO: Lookup basic summary of each
         return ""
+
+class reFrame(randomResponses):
+    
+    def __init__(self, available_prompts):
+        super().__init__(self, available_prompts)
+    
+    def generate(self, message):
+        entity = fine_worst_entity(message)
+        distortion = find_distortion(message)
+        resp = self.get_random()
+        return resp.format(entity)
 
 class clarificationResponse:
     
