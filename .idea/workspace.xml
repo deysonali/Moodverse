@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="" />
+    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="json ignore added">
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/bkgd.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/downloads-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/img/intro-bg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/abtus/js/grayscale.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/front/src/app/about/about.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,13 +28,16 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="MERGE" />
   </component>
   <component name="ProjectId" id="1WZd885CwnQwF9XNorLM5FTJpbW" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server/front/src/assets" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RainWu\IdeaProjects\Moodverse\Server\front\src\assets" />
+      <recent name="C:\Users\RainWu\IdeaProjects\Moodverse\Server\front\src\app\about" />
       <recent name="C:\Users\RainWu\IdeaProjects\Moodverse\Server" />
     </key>
   </component>
