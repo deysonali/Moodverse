@@ -28,7 +28,7 @@ class Model:
     
     def predict(self, message):
         o = self.model.predict(self.encode(message.lower()))
-        return self.id2label[np.argmin(o[0])], o[0]
+        return self.id2label[np.argmax(o[0])], o[0]
         
 love_model = Model(love_hate_path, love_hate_vars)
 emergency_model = Model(emergency_path, emergency_vars)
