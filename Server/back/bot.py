@@ -75,7 +75,10 @@ class Bot:
     
     def emergency_reply(self):
         self.done = True
-        return "{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user, self.profile.find_worst_entity())
+        if self.profile.find_worst_entity():
+            return "{0}, I know this is a hard time with, especially with {1}. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user, self.profile.find_worst_entity())
+        else:
+            return "{0}, I know this is a hard time with. Take a deep breath because you're more powerful than you know. I'll be auto-dialing 9-1-1 in ten seconds unless you stop me.".format(self.user)
         
     def check_leave_intent(self, message):
         words = ["bye", "bye!", "goodbye"]
