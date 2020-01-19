@@ -9,6 +9,10 @@ import json
 import uuid
 import datetime
 
+import sys
+sys.path.append("back/")
+from back.bot import Bot
+
 """
 Server port is 5000 by default
 """
@@ -23,6 +27,8 @@ app.config['SECRET_KEY'] = 'secret!'
 socketio = SocketIO(app, cors_allowed_origins="*")
 
 msgs_ref = db.collection("messages")
+
+bot1 = Bot("Bot 1")
 
 @app.route("/") 
 def root():
@@ -94,17 +100,25 @@ def message_response(jsonData):
     Model response
     """
 
-    # model_response = model.respond(...)
-    model_response = {
+    model_response = bot1.get_response(recievedMsg["body"])
+    print(model_response)
+    msgPayload = {
         "message_id": get_uuid4(),
         "type": 1,
         "author_id": "bot1",
-        "body": "Model response body 99"
+        "body": model_response
     }
 
-    add_message(model_response)
+        msgPayload = {
+        "message_id": get_uuid4(),
+        "type": 1,
+        "author_id": "bot1",
+        "body": "NO"
+    }
 
-    send_message(model_response)
+    add_message(msgPayload)
+
+    send_message(msgPayload)
 
 if __name__ == '__main__':
     socketio.run(app)
