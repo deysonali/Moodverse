@@ -1,18 +1,13 @@
-import os
-from google.cloud import language
-from google.cloud.language import enums
-from google.cloud.language import types
 from google.cloud import language_v1
 from google.cloud.language_v1 import enums
+import os
+import pandas as pd
 
-## Authenticate
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = "../../Moodverse-26a3ab24482a.json"
+credential_path = 'REDACTED'
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = credential_path
 
-# Instantiates a client
-client = language.LanguageServiceClient()
 
-def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT list of lists (each list has
-                                                    # [entity, type, score]
+def sample_analyze_entity_sentiment(text_content):
     """
     Analyzing Entity Sentiment in a String
     Args:
@@ -82,10 +77,11 @@ def sample_analyze_entity_sentiment(text_content): #INPUT: one sentence #OUTPUT 
     # the automatically-detected language.
     # print(u"Language of the text: {}".format(response.language))
 
+from google.cloud import language_v1
+from google.cloud.language_v1 import enums
 
 
-
-def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: score of entire sentence
+def sample_analyze_sentiment(text_content): #ASSUMES SINGLE SENTENCE
     """
     Analyzing Sentiment in a String
 
@@ -124,11 +120,11 @@ def sample_analyze_sentiment(text_content): #INPUT: Single sentence #Output: sco
     # print(u"Language of the text: {}".format(response.language))
     return sentiment_score
 
-def update_self_score(result, entity_dict): #updates self sentiment in entity_dict
+def update_self_score(result, entity_dict):
     entity_dict["self"].append(result) #adds on the new number
     return entity_dict
 
-def update_entities(result, entity_dict): #updates list of other entities and their associated sentiments
+def update_entities(result, entity_dict):
     for set in result:
         entity = set[0]
         score = set[2]
@@ -138,15 +134,10 @@ def update_entities(result, entity_dict): #updates list of other entities and th
             entity_dict[entity] = [score]
         return entity_dict
 
-
-
-# one usage instance
-
-input = "I am disappointed in myself."
 self_words = ["me", "I", "myself", "my", "My", "Me", "Myself"]
 entity_dict = {"self" : []}
 
-#TODO make a function or something
+input = "I am disappointed in myself."
 
 result = sample_analyze_entity_sentiment(input)
 
@@ -160,3 +151,4 @@ else:
     update_dict(result, entity_dict)
 
 print(entity_dict)
+
