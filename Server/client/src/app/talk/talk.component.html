@@ -1,0 +1,54 @@
+<div class="bootstrap_chat"></div>
+<div class="container py-4 px-5">
+    <header class="text-center">
+        <h1 class="display-4 text-white">Moodverse</h1>
+    </header>
+
+    <div class="row rounded-lg overflow-hidden shadow">
+        <!-- Users box-->
+        <div class="col-12 px-0">
+            <div class="bg-white">
+
+                <div class="bg-gray px-4 py-2 title-b">
+                    <p class="h5 mb-0 py-1">Moodverse</p>
+                    <br>
+                </div>
+
+                <!-- Reciever Message-->
+                <div *ngFor="let msg of messages.slice().reverse()">
+                    <div>
+                        <div class="media-body clearfix">
+                            <div [ngClass]="{'media ml-auto mb-3 chat-right float-right': msg.author_id=='John', 'media chat-left float-left':msg.author_id=='Mood Bot' }" class="bg-light rounded py-2 px-3">
+                                <p class="text-small mb-1 text-secondary">{{ msg.body }}</p>
+                                <p class="small mb-1 text-muted">{{ msg.sent }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sender Message-->
+                <!-- <div class="media w-50 mb-3"><img src="assets/img/logo.png" alt="user" width="50"
+                        class="rounded-circle">
+                    <div class="media-body ml-3">
+                        <div class="bg-light rounded py-2 px-3 mb-2">
+                            <p class="text-small mb-0 text-muted">Test, which is a new approach to have</p>
+                        </div>
+                        <p class="small text-muted">12:00 PM | Aug 13</p>
+                    </div>
+                </div> -->
+                <!-- Typing area -->
+                <form sub class="bg-light">
+                    <div class="input-group">
+                        <input autofocus [(ngModel)]="txtInput" name="userTxt" type="text" placeholder="Type a message" aria-describedby="button-addon2"
+                            class="form-control rounded-0 border-0 py-4 bg-light">
+                        <div class="input-group-append">
+                            <button id="button-addon2" (click)="sendMessage()" class="btn btn-link">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+        </div>
+    </div>
+</div>
