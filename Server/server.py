@@ -109,12 +109,12 @@ def message_response(jsonData):
         "body": model_response
     }
 
-        msgPayload = {
-        "message_id": get_uuid4(),
-        "type": 1,
-        "author_id": "bot1",
-        "body": "NO"
-    }
+    # msgPayload = {
+    #     "message_id": get_uuid4(),
+    #     "type": 1,
+    #     "author_id": "bot1",
+    #     "body": "I'm so sorry that you feel that way"
+    # }
 
     add_message(msgPayload)
 
