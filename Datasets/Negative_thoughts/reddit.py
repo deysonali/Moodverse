@@ -10,7 +10,7 @@ subs = {
   "Anxiety" : None,
   "SuicideWatch" : None
 }
-THREAD_LIMIT = 100
+THREAD_LIMIT = 500
 
 
 print("Downloading")
