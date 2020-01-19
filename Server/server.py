@@ -57,7 +57,7 @@ def get_uuid4():
 """
 def add_message(msgDict):
     msg = {
-        "message_id": msgDict["message_id"],
+        "message_id": get_uuid4(),
         "type": msgDict["type"],
         "author_id": msgDict["author_id"],
         "sent": firestore.SERVER_TIMESTAMP,
@@ -82,7 +82,7 @@ def message_response(jsonData):
     print("Recieved msg from {}".format(str(jsonData)))
 
     recievedMsg = {
-        "message_id": jsonData["message_id"],
+        "message_id": get_uuid4(),
         "type": jsonData["type"],
         "author_id": jsonData["author_id"],
         "body": jsonData["body"]
