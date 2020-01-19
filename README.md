@@ -18,6 +18,8 @@ Moodverse also gives you insights over time about your mood and the common negat
 ## Usage
 To start the development server, run `server.py`. To start the front end run `npm run start` in the angular project located in Server/front.
 
+In `nlp.py` set the path to your Google Service Account Key.
+
 ## Models
 ### Sentiment Analysis Model
 - Used Google Cloud's NLP API to gain insights about how users feel about certain stressors they talk about.
