@@ -8,11 +8,11 @@ from model_loader import *
 def flag_detect(message):
 
     if "sadness" in emergency_model.predict(message)[0]:
-            return True
+        return True
 
-    for word in ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]:
-            if word in message:
-                return True
+    #for word in ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]:
+     #   if word in message:
+      #         return True
 
     return False
 
@@ -28,9 +28,11 @@ class Bot:
                  explorations_left = 3,
                  stage_12_threshold = 1/3,
                  stage_23_threshold = 2/3,
+                 debug = True,
                  ):
         
         self.user = user
+        self.debug = debug
         self.done = False
         self.sympatheticResponse = randomResponses(sympathetic_responses)
         self.clarificationResponse = clarificationResponse(clarification_responses[0], clarification_responses[1])
@@ -55,7 +57,6 @@ class Bot:
         self.stage_23_threshold = stage_23_threshold
 
     def evaluate(self, message):
-        
         self.profile.update(message)
     
     def exit(self):
@@ -106,16 +107,23 @@ class Bot:
             self.evaluate(message)
             
             if self.flag_check(message):
+                if debug: print("User flagged")
                 return self.emergency_reply()
             
             if self.check_leave_intent(message):
+                if debug: print("User wants to leave.")
                 return self.exit()
             
             if not self.i_done:
                 self.i_done = True
+                if debug: print("Initial reply")
                 return self.get_initial_message(message)
             else:
+                if debug: print("Follow-on exploration")
                 return self.follow_exploration(message)
+        
+        if debug:    
+            print("Done has been triggered. No responses")
     
     def send(self, message):
         return self.format_reply(str(message))

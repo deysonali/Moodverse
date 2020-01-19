@@ -1,4 +1,12 @@
 from bot import Bot
+import os, sys
 b = Bot("addy")
-print(">> User", "I'm feeling really stressed today")
-print(">> Bot", b.get_response("I'm feeling really stressed today"))
+first = True
+greeting = "How are you doing today?"
+
+while not b.done:
+    if first:
+        user = input(" >>" + greeting + " ")
+    else:
+        user = input(">> User")
+    print(">> Bot", b.get_response(user))
