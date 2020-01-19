@@ -47,8 +47,13 @@ class cogDist(randomResponses):
         return resp.format(distortion, self.lookUp(distortion))
     
     def lookUp(self, distortion):
-        #TODO: Lookup basic summary of each
-        return ""
+        
+        return {
+            "mind_reading" : "assuming other people's thoughts about you",
+            "overgeneralization" : "using one piece of evidence as the full truth",
+            "polarized_thinking" : "you have an all or nothing attitude",
+            "catastrophizing" : "when you make mountains out of molehills"
+         }[distortion]
 
 class reFrame(randomResponses):
     

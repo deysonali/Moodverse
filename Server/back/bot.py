@@ -10,8 +10,6 @@ def flag_detect(message):
         else:
             return False
 
-
-
 class Bot:
     
     def __init__(self, 
