@@ -6,10 +6,15 @@ from cognitive_distortions import find_distortion
 from model_loader import *
 
 def flag_detect(message):
-        if "sadness" in emergency_model.predict(message)[0]:
+
+    if "sadness" in emergency_model.predict(message)[0]:
             return True
-        else:
-            return False
+
+    for word in ["kill myself", "death", "die", "suicide", "suicidal", "end myself"]:
+            if word in message:
+                return True
+
+    return False
 
 class Bot:
     
@@ -121,8 +126,8 @@ class Bot:
         #message[0] = message[0].upper()
         message = message.capitalize()
         # end with a period
-        if message[-1] != '.':
-            message += '.'
+        #if message[-1] != '.':
+            #message += '.'
         
         return message
     
