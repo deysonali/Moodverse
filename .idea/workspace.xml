@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/LOGO1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/bkgd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/chat/css/Bootstrap-Chat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/chat/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/chat/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/home.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/insights/css/Bootstrap-Chat.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/insights/css/styles.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/insights/img/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/team.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/tyb_insights.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/刺猬 (1).png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/home/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/assets/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -210,7 +186,21 @@
       <option name="project" value="LOCAL" />
       <updated>1579427703326</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Finished insights, chatbot interface.">
+      <created>1579438836850</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1579438836850</updated>
+    </task>
+    <task id="LOCAL-00006" summary="json ignore added">
+      <created>1579439033828</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1579439033828</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -231,6 +221,8 @@
     <MESSAGE value="Reddit scraper updated" />
     <MESSAGE value="Uploaded front end to the main branch." />
     <MESSAGE value="sentences to hardcode with" />
-    <option name="LAST_COMMIT_MESSAGE" value="sentences to hardcode with" />
+    <MESSAGE value="Finished insights, chatbot interface." />
+    <MESSAGE value="json ignore added" />
+    <option name="LAST_COMMIT_MESSAGE" value="json ignore added" />
   </component>
 </project>
