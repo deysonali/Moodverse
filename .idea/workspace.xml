@@ -2,10 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="554e0abf-503b-4a3e-a554-a7535a3d5abd" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/cognitive_distortions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sentiment_entity.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/.editorconfig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/browserslist" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/e2e/protractor.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/e2e/src/app.e2e-spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/e2e/src/app.po.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/karma.conf.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/about/about.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app-routing.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/app.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/insights/insights.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat-dialog/chat-dialog.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat-dialog/chat-dialog.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat-dialog/chat-dialog.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat-dialog/chat-dialog.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/chat/chat.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/app/talk/talk.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/assets/.gitkeep" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/main.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/polyfills.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Server/front/src/test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Utilities/google_nlp.py" beforeDir="false" afterPath="$PROJECT_DIR$/Utilities/google_nlp.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,7 +68,12 @@
   </component>
   <component name="ProjectId" id="1WZd885CwnQwF9XNorLM5FTJpbW" />
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Server" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\RainWu\IdeaProjects\Moodverse\Server" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -39,7 +87,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.sentiment_entity">
+  <component name="RunManager">
     <configuration name="personality_insights" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Moodverse" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -103,17 +151,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <list>
-      <item itemvalue="Python.sentiment_entity" />
-      <item itemvalue="Python.personality_insights" />
-      <item itemvalue="Python.reddit_scraper" />
-    </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.personality_insights" />
-        <item itemvalue="Python.reddit_scraper" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -148,7 +185,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
