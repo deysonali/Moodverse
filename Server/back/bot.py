@@ -1,7 +1,8 @@
 import sys
 from .text_generators import *
 from nlp import *
-from .cognitive_distortions import find_distortion
+from cognitive_distortions import find_distortion
+
 from model_loader import *
 
 def flag_detect(message):
