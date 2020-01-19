@@ -7,3 +7,8 @@ torchtext
 tensorflow
 nltk
 torch
+
+flask
+firebase_admin
+flask_socketio
+uuid
