@@ -38,6 +38,8 @@ class Bot:
             [self.get_initial_message,
             self.follow_exploration,]
             )
+        self.i_done = False
+        self.e_started = False
         # self.seq2 = CyclicSequence(
         #     self.get_stage1_response,
         #     self.get_stage2_response,
@@ -63,7 +65,7 @@ class Bot:
         
         msg3 = "Chao!"     
         
-        self.send_sequential_message(msg1, msg2, msg3)
+        self.send_sequential_message((msg1, msg2, msg3))
         self.done = True
     
     def emergency_reply(self):
@@ -86,7 +88,7 @@ class Bot:
             
         if recent_score > self.stage_23_threshold:
             stage = self.get_stage3_response
-        elif recent.score < self.stage_12_threshold:
+        elif recent_score < self.stage_12_threshold:
             stage = self.get_stage1_response
         else:
             stage = self.get_stage2_response
@@ -107,13 +109,17 @@ class Bot:
             if self.check_leave_intent(message):
                 self.exit()
             
-            response = self.seq1.next()(message)
+            if not self.i_done:
+                response = self.get_initial_message(message)
+                self.i_done = True
+            else:
+                response = self.follow_exploration(message)
     
     def send(message):
         return format_reply(str(message))
         # sys.stdout.write()
     
-    def format_reply(message):
+    def format_reply(self, message):
         
         # capitalize first letter
         message[0] = message[0].upper()
@@ -123,41 +129,37 @@ class Bot:
         
         return message
     
-    def send_sequential_message(self, **kwargs):
+    def send_sequential_message(self, *args):
         message = ""
-        for arg in kwargs:
+        for arg in args:
             message += self.format_reply(arg) + " "
         self.send(message)
     
     def get_initial_message(self, message):
         
-        self.send_sequential_message(
+        self.send_sequential_message((
             self.sympatheticResponse.generate(),
             # Generate categorical insight response
             self.cogResponse.generate(message),
             # Ask for general clarification
             self.clarificationResponse.generate(),
-        )
+        ))
 
     def get_stage1_response(self, message):
 
-        self.send_sequential_message(
+        self.send_sequential_message((
             self.sympatheticResponse.generate(),
             self.clarificationResponse.generate(message),
-        )
+        ))
      
     def get_stage2_response(self, message):
 
-        self.send_sequential_message(
-            self.reframeResponse.generate(message),
-        )
+        self.send(self.reframeResponse.generate(message))
      
     def get_stage3_response(self, message):
 
         entity = self.profile.fine_worst_entity()
-        self.send_sequential_message(
-            self.proudResponse.generate(entity),
-        )
+        self.send(self.proudResponse.generate(entity))
         self.exit()
         
 class Profile:
