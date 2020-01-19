@@ -1,7 +1,7 @@
 import sys
-from text_generators import *
-from utilities.nlp import *
-from utilities.cognitive_distortions import find_distortion
+from .text_generators import *
+from .utilities.nlp import *
+from .utilities.cognitive_distortions import find_distortion
 
 class Bot:
     
